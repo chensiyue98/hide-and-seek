@@ -1,0 +1,2 @@
+import InfoHint from './InfoHint';
+export default function ThreatMeter({threat}:{threat:number}){return <div className="threat-block"><div className="metric-label"><span>THREAT <InfoHint label="Threat" text="Questions usually add 1 Threat. At 3, 5, 7, and 9, choose one of two Curses."/></span><b>{threat}</b></div><div className="threat-segments" aria-label={`Threat ${threat} out of 10`}>{Array.from({length:10},(_,i)=><span key={i} className={i<threat?'filled':''}/>)}</div></div>}
